@@ -1,0 +1,9 @@
+version: '3'
+services:
+  k8s-hello:
+    build: .
+    image: eapm-lnx-30.cisco.com:5000/anurag-test/k8s-hello:1
+    container_name: k8s-hello
+    ports:
+      - 8080:8080
+

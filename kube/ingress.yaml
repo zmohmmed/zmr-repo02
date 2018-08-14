@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8s-hello
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  backend:
+    serviceName: k8s-hello
+    servicePort: 80
+  rules:
+  - host: myminikube.info
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: k8s-hello-service
+          servicePort: 8080
+
